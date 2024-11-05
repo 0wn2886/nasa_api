@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NASA Image Explorer - Near Earth Objects</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>NASA Image Explorer</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html">APOD</a></li>
+      <li><a href="mars-rover.html">Mars Rover</a></li>
+      <li><a href="earth-imager.html">Earth Imager</a></li>
+      <li><a href="eonet.html">EONET</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <h2>Near Earth Objects</h2>
+  <form id="neo-form">
+    <label for="start-date">Start Date:</label>
+    <input type="date" id="start-date" name="start-date" required>
+    <label for="end-date">End Date:</label>
+    <input type="date" id="end-date" name="end-date" required>
+    <button type="submit">Get NEO Data</button>
+  </form>
+  <div id="neo-data"></div>
+</main>
+<script src="neo.js"></script>
+</body>
+</html>

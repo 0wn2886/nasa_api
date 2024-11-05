@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NASA EONET Explorer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>NASA EONET Explorer</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html">APOD</a></li>
+      <li><a href="mars-rover.html">Mars Rover</a></li>
+      <li><a href="neo.html">Near Earth Objects</a></li>
+      <li><a href="earth-imager.html">Earth Imager</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <section id="eonet-data">
+    <h2>Natural Events</h2>
+    <form id="eonet-form">
+      <label for="event-type">Event Type:</label>
+      <select id="event-type" name="event-type">
+        <option value="wildfires">Wildfires</option>
+        <option value="severeStorms">Severe Storms</option>
+        <option value="volcanoes">Volcanoes</option>
+        <option value="earthquakes">Earthquakes</option>
+      </select>
+      <button type="submit">Get Events</button>
+    </form>
+    <div id="eonet-info"></div>
+  </section>
+  <script src="eonet.js"></script>
+</main>
+</body>
+</html>

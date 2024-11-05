@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA Image Explorer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>NASA Image Explorer</h1>
+    <nav>
+        <ul>
+            <li><a href="mars-rover.html">Mars Rover</a></li>
+            <li><a href="neo.html">Near Earth Objects</a></li>
+            <li><a href="earth-imager.html">Earth Imager</a></li>
+            <li><a href="eonet.html">EONET</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section id="image-of-the-day">
+        <h2>Image Astronomique du Jour</h2>
+        <div id="apod-container">
+            <img id="apod-image" src="" alt="Astronomy Picture of the Day">
+            <div id="apod-info">
+                <h3 id="apod-title"></h3>
+                <p id="apod-date"></p>
+                <p id="apod-explanation"></p>
+            </div>
+        </div>
+    </section>
+    <section id="image-gallery">
+        <h2>Galerie des 10 derniers jours</h2>
+        <div id="gallery-container">
+            <div class="carousel">
+                <!-- Les images seront insérées ici par JavaScript -->
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-button prev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-button next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            <div class="carousel-indicators">
+                <!-- Les indicateurs seront insérés ici par JavaScript -->
+            </div>
+        </div>
+    </section>
+</main>
+<div id="modal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-image">
+    <div id="modal-caption"></div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
