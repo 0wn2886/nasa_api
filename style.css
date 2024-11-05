@@ -20,7 +20,7 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background-color: var(--primary-bg);
+    background-image: url("solaire_1152.jpg");
     color: var(--text-primary);
     line-height: 1.5;
     min-height: 100vh;
