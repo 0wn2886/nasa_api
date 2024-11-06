@@ -68,5 +68,15 @@ function displayNEOData(data) {
 }
 
 function toggleCard(card) {
-    card.classList.toggle('expanded');
+    if (card.classList.contains('expanded')) {
+        card.classList.remove('expanded');
+        card.style.top = '';
+        card.style.left = '';
+    } else {
+        // Calculer la position actuelle
+        const rect = card.getBoundingClientRect();
+        card.style.top = `${rect.top}px`;
+        card.style.left = `${rect.left}px`;
+        card.classList.add('expanded');
+    }
 }

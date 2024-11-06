@@ -74,19 +74,27 @@ form {
     align-items: center;
     justify-content: center;
     text-align: center;
-    transition: transform 0.3s, width 0.3s, height 0.3s;
+    transition: transform 0.3s, width 0.3s, height 0.3s, box-shadow 0.3s, top 0.3s, left 0.3s;
     overflow: hidden;
     position: relative;
     box-shadow: 0 4px 15px rgba(45, 54, 88, 0.5);
+    z-index: 1;
 }
 
 .neo-card:hover {
     transform: scale(1.05);
 }
 
+/* Style pour l'agrandissement au-dessus des autres cartes */
 .neo-card.expanded {
+    position: absolute; /* Permet la superposition */
     width: 300px;
     height: auto;
+    z-index: 10; /* Premier plan lors de l’agrandissement */
+    box-shadow: 0 8px 30px rgba(45, 54, 88, 0.7); /* Ombre plus marquée */
+    left: 0;
+    right: 0;
+    margin: auto; /* Centre horizontalement */
 }
 
 .neo-details {
