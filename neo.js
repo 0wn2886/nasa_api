@@ -54,7 +54,7 @@ function displayNEOData(data) {
                     <div class="neo-details">
                         <ul>
                             <li>Diamètre estimé: ${neo.estimated_diameter.kilometers.estimated_diameter_min.toFixed(2)} - ${neo.estimated_diameter.kilometers.estimated_diameter_max.toFixed(2)} km</li>
-                            <li>Potentiellement dangereux: ${neo.is_potentially_hazardous_asteroid ? 'Oui' : 'Non'}</li>
+                            <li>Dangereux: ${neo.is_potentially_hazardous_asteroid ? 'Oui' : 'Non'}</li>
                             <li>Date d'approche: ${neo.close_approach_data[0].close_approach_date_full}</li>
                             <li>Distance manquée: ${parseFloat(neo.close_approach_data[0].miss_distance.kilometers).toFixed(2)} km</li>
                         </ul>
@@ -68,15 +68,22 @@ function displayNEOData(data) {
 }
 
 function toggleCard(card) {
+    // Fermer toute carte déjà étendue
+    const openCard = document.querySelector('.neo-card.expanded');
+    if (openCard && openCard !== card) {
+        openCard.classList.remove('expanded');
+        openCard.style.fontSize = ''; // Réinitialiser la taille du texte
+    }
+
+    // Toggle l'état de la carte sélectionnée
+    card.classList.toggle('expanded');
+
+    // Ajuster la taille de police pour le nouvel état agrandi
     if (card.classList.contains('expanded')) {
-        card.classList.remove('expanded');
-        card.style.top = '';
-        card.style.left = '';
+        const expandedWidth = card.offsetWidth;
+        const fontSize = expandedWidth / 20; // Ajustement plus petit
+        card.style.fontSize = `${fontSize}px`;
     } else {
-        // Calculer la position actuelle
-        const rect = card.getBoundingClientRect();
-        card.style.top = `${rect.top}px`;
-        card.style.left = `${rect.left}px`;
-        card.classList.add('expanded');
+        card.style.fontSize = ''; // Réinitialiser si la carte est réduite
     }
 }
