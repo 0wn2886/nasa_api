@@ -1,0 +1,120 @@
+/* Thème sombre et cosmique inspiré des astéroïdes */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #0d0b1e; /* Fond rappelant l'espace */
+    color: #b3b7e4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header, main {
+    width: 90%;
+    max-width: 1000px;
+    margin-top: 20px;
+}
+
+header h1 {
+    color: #e3e7ff;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 15px;
+}
+
+nav a {
+    color: #b3b7e4;
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+nav a:hover {
+    background-color: #4c4a7d; /* Couleur subtile pour le survol */
+}
+
+form {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+#neo-data {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* Cartes astéroïdes */
+.neo-card {
+    background: radial-gradient(circle at 50% 50%, #343a6e, #1c1b3a); /* Effet cosmique et circulaire */
+    border-radius: 8px;
+    padding: 15px;
+    color: #e3e7ff;
+    cursor: pointer;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.3s, width 0.3s, height 0.3s;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(45, 54, 88, 0.5);
+}
+
+.neo-card:hover {
+    transform: scale(1.05);
+}
+
+.neo-card.expanded {
+    width: 300px;
+    height: auto;
+}
+
+.neo-details {
+    display: none;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+.neo-card.expanded .neo-details {
+    display: block;
+}
+
+.neo-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #ff9f45; /* Orange pour rappeler les astéroïdes */
+}
+
+.neo-card ul {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+/* Grille pour alignement en lignes de 5 éléments */
+#neo-data {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    justify-items: center;
+}

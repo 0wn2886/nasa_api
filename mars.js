@@ -7,8 +7,8 @@ const photoContainer = document.getElementById('rover-photos');
 // Fonction pour récupérer les photos d'un rover
 async function fetchRoverPhotos(roverName) {
     try {
-        // Construire l'URL de l'API
-        const apiUrl = `https://api.nasa.gov/mars-photos/api/v1/rovers/${roverName}/photos?sol=1000&api_key=${API_KEY}`;
+        // Construire l'URL de l'API avec la limite de 40 photos
+        const apiUrl = `https://api.nasa.gov/mars-photos/api/v1/rovers/${roverName}/photos?sol=1000&api_key=${API_KEY}&per_page=40`;
 
         // Faire la requête à l'API
         const response = await fetch(apiUrl);
@@ -17,11 +17,13 @@ async function fetchRoverPhotos(roverName) {
         // Vérifier s'il y a des photos
         if (data.photos.length > 0) {
             // Parcourir les photos et les afficher
-            data.photos.forEach(photo => {
-                const img = document.createElement('img');
-                img.src = photo.img_src;
-                img.alt = `Photo du rover ${roverName}`;
-                photoContainer.appendChild(img);
+            data.photos.forEach((photo, index) => {
+                if (index < 40) {
+                    const img = document.createElement('img');
+                    img.src = photo.img_src;
+                    img.alt = `Photo du rover ${roverName}`;
+                    photoContainer.appendChild(img);
+                }
             });
         } else {
             photoContainer.textContent = `Aucune photo disponible pour le rover ${roverName}.`;
