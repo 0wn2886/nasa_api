@@ -7,7 +7,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #1d1f27;
+    background-image: url("mars.jpg");
     color: #f4f4f9;
     line-height: 1.6;
     display: flex;
