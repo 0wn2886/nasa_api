@@ -26,17 +26,7 @@ body {
     min-height: 100vh;
 }
 
-/* Header et Navigation */
-header {
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    padding: 1.5rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
+
 
 h1 {
     font-size: 2.5rem;
@@ -48,35 +38,6 @@ h1 {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     letter-spacing: -0.5px;
-}
-
-nav {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-
-nav ul {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    list-style: none;
-}
-
-nav a {
-    color: var(--text-primary);
-    text-decoration: none;
-    font-size: 1rem;
-    padding: 0.7rem 1.2rem;
-    border-radius: 20px;
-    transition: var(--transition);
-    font-weight: 500;
-}
-
-nav a:hover {
-    background-color: var(--secondary-bg);
-    color: var(--accent-color);
-    transform: translateY(-1px);
 }
 
 /* Main Content */
@@ -409,4 +370,59 @@ section {
         width: 40px;
         height: 40px;
     }
+}
+/* Transparent Navbar CSS */
+.transparent-navbar {
+    position: sticky; /* Garde la navbar en haut de la page */
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1); /* Fond blanc transparent (10% d'opacité) */
+    backdrop-filter: blur(10px); /* Effet de flou pour un look moderne */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Légère ombre portée pour la profondeur */
+    padding: 1rem 2rem;
+    z-index: 1000; /* Assure que la navbar est au-dessus des autres éléments */
+    border-radius: 15px; /* Ajoute un arrondi aux angles */
+}
+
+
+.transparent-navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem; /* Espace entre les éléments */
+    padding: 0;
+    margin: 0;
+}
+
+.transparent-navbar ul li {
+    display: inline;
+}
+
+.transparent-navbar ul li a {
+    color: #f4f4f9; /* Couleur du texte */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    padding: 0.5rem 1rem; /* Espace pour rendre le clic plus confortable */
+    border-radius: 5px; /* Arrondi des bords pour un style moderne */
+}
+
+.transparent-navbar ul li a:hover {
+    color: #d9534f; /* Change la couleur du texte au survol */
+    background-color: rgba(255, 255, 255, 0.2); /* Change la couleur de fond pour une meilleure visibilité */
+}
+
+/* En-tête h1 */
+header h1 {
+    text-align: center;
+    color: #d9534f; /* Couleur du titre */
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+nav {
+    max-width: fit-content;
+    margin: 0 auto;
+    padding: 0 1rem;
 }

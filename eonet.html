@@ -4,12 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NASA EONET Explorer</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="eonet.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 </head>
 <body>
 <header>
   <h1>NASA EONET Explorer</h1>
-  <nav>
+  <nav class="transparent-navbar">
     <ul>
       <li><a href="index.html">APOD</a></li>
       <li><a href="mars.html">Mars Rover</a></li>
@@ -31,9 +33,44 @@
       </select>
       <button type="submit">Get Events</button>
     </form>
-    <div id="eonet-info"></div>
+    <div id="map" style="height: 500px; width: 100%; margin-top: 20px;"></div>
   </section>
   <script src="eonet.js"></script>
+  <script>
+    const map = L.map('map').setView([20, 0], 2);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    function addMapPins(events) {
+      events.forEach(event => {
+        const coords = event.geometry[0].coordinates;
+        const marker = L.marker([coords[1], coords[0]]).addTo(map);
+        marker.bindPopup(`
+          <strong>${event.title}</strong><br>
+          <strong>Date:</strong> ${new Date(event.geometry[0].date).toLocaleDateString()}<br>
+          <strong>Coordinates:</strong> ${coords.join(', ')}<br>
+          <strong>Description:</strong> ${event.description || 'No description available'}
+        `);
+      });
+    }
+
+    eonetForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const eventType = document.getElementById('event-type').value;
+      try {
+        const eventsData = await fetchEonetData(eventType);
+        map.eachLayer(layer => {
+          if (layer instanceof L.Marker) {
+            map.removeLayer(layer);
+          }
+        });
+        addMapPins(eventsData);
+      } catch (error) {
+        console.error('Erreur lors de la récupération des données des événements naturels:', error);
+      }
+    });
+  </script>
 </main>
 </body>
 </html>

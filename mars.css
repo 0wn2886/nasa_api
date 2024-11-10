@@ -7,7 +7,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-image: url("mars.jpg");
+    background-image: url("mars_8k.jpg");
     background-attachment: scroll; /* L'image suit le défilement */
     background-repeat: no-repeat; /* Empêche la répétition de l'image */
     background-size: cover; /* L'image occupe l'espace disponible de façon proportionnelle */
@@ -16,48 +16,61 @@ body {
     line-height: 1.6;
     min-height: 100vh;
 }
-
-
-
-
-
-header {
-    background-color: #2c2e3b;
-    padding: 1rem 0;
-    text-align: center;
-}
-
-header h1 {
-    font-size: 2.5rem;
-    color: #d9534f;
-}
-
 nav {
-    margin-top: 1rem;
+    max-width: fit-content;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+/* Transparent Navbar CSS */
+.transparent-navbar {
+    position: sticky; /* Garde la navbar en haut de la page */
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1); /* Fond blanc transparent (10% d'opacité) */
+    backdrop-filter: blur(10px); /* Effet de flou pour un look moderne */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Légère ombre portée pour la profondeur */
+    padding: 1rem 2rem;
+    z-index: 1000; /* Assure que la navbar est au-dessus des autres éléments */
+    border-radius: 15px; /* Ajoute un arrondi aux angles */
 }
 
-nav ul {
+
+.transparent-navbar ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 2rem; /* Espace entre les éléments */
+    padding: 0;
+    margin: 0;
 }
 
-nav ul li {
+.transparent-navbar ul li {
     display: inline;
 }
 
-nav ul li a {
-    color: #f4f4f9;
+.transparent-navbar ul li a {
+    color: #f4f4f9; /* Couleur du texte */
     text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    padding: 0.5rem 1rem; /* Espace pour rendre le clic plus confortable */
+    border-radius: 5px; /* Arrondi des bords pour un style moderne */
 }
 
-nav ul li a:hover {
-    background-color: #d9534f;
+.transparent-navbar ul li a:hover {
+    color: #d9534f; /* Change la couleur du texte au survol */
+    background-color: rgba(255, 255, 255, 0.2); /* Change la couleur de fond pour une meilleure visibilité */
 }
+
+/* En-tête h1 */
+header h1 {
+    text-align: center;
+    color: #d9534f; /* Couleur du titre */
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
 
 main {
     flex: 1;

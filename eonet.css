@@ -1,0 +1,183 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+nav {
+    max-width: fit-content;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Transparent Navbar CSS */
+.transparent-navbar {
+    position: sticky; /* Garde la navbar en haut de la page */
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1); /* Fond blanc transparent (10% d'opacité) */
+    backdrop-filter: blur(10px); /* Effet de flou pour un look moderne */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Légère ombre portée pour la profondeur */
+    padding: 1rem 2rem;
+    z-index: 1000; /* Assure que la navbar est au-dessus des autres éléments */
+    border-radius: 15px; /* Ajoute un arrondi aux angles */
+}
+
+.transparent-navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem; /* Espace entre les éléments */
+    padding: 0;
+    margin: 0;
+}
+
+.transparent-navbar ul li {
+    display: inline;
+}
+
+.transparent-navbar ul li a {
+    color: #f4f4f9; /* Couleur du texte */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    padding: 0.5rem 1rem; /* Espace pour rendre le clic plus confortable */
+    border-radius: 5px; /* Arrondi des bords pour un style moderne */
+}
+
+.transparent-navbar ul li a:hover {
+    color: #d9534f; /* Change la couleur du texte au survol */
+    background-color: rgba(255, 255, 255, 0.2); /* Change la couleur de fond pour une meilleure visibilité */
+}
+
+/* En-tête h1 */
+header h1 {
+    text-align: center;
+    color: #d9534f; /* Couleur du titre */
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+main {
+    display: grid;
+    max-width: 800px;
+    margin: 30px auto; /* Centers the main element horizontally */
+    padding: 1rem;
+}
+
+#eonet-data h2 {
+    color: #d9534f;
+    margin-bottom: 20px;
+}
+
+#eonet-data {
+    gap: 15px;
+    justify-items: center;
+    position: relative;
+    align-self: center;
+}
+/* Carte Leaflet */
+#map {
+    height: 625px; /* Increased by 25% from 500px */
+    width: 125%; /* Increased by 25% */
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre pour donner une impression de profondeur */
+}
+
+/* Formulaire EONET */
+#eonet-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.3); /* Fond blanc transparent (10% d'opacité) */
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    gap: 1rem; /* Ajoute un espace de 1rem entre les éléments */
+}
+
+#eonet-form label {
+    font-weight: bold;
+    color: #f4f4f9;
+}
+
+#eonet-form select {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #333;
+    color: #f4f4f9;
+}
+
+#eonet-form button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #d9534f;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#eonet-form button:hover {
+    background-color: #c9302c;
+}
+
+/* Section des événements */
+#eonet-info {
+    color: #f4f4f9;
+    margin-top: 20px;
+}
+
+.event {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.event h3 {
+    color: #d9534f;
+}
+
+/* Style sombre */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("disaster.jpg");
+    background-attachment: scroll; /* L'image suit le défilement */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+    background-size: cover; /* L'image occupe l'espace disponible de façon proportionnelle */
+    background-position: top center; /* Positionne l'image en haut et au centre */
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+
+
+header, main {
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    color: #f4f4f9;
+    margin-top: 20px;
+}
+
+footer a {
+    color: #d9534f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
