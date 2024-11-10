@@ -26,31 +26,25 @@ body {
     min-height: 100vh;
 }
 
-/* En-tête h1 */
+
+
 h1 {
-    text-align: center;
-    color: #d9534f; /* Couleur du titre */
     font-size: 2.5rem;
     font-weight: 700;
+    text-align: center;
     margin-bottom: 1.5rem;
+    background: #d9534f;;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     letter-spacing: -0.5px;
 }
 
-nav {
-    max-width: fit-content;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-
-
 /* Main Content */
-main {
-    max-width: 1200px;
-    margin: 3rem auto;
-    padding: 0 1rem;
+header, main {
+    border-radius: 10px;
+    padding: 1rem;
+    margin-top: 20px;
 }
 
 section {
@@ -419,3 +413,16 @@ section {
     background-color: rgba(255, 255, 255, 0.2); /* Change la couleur de fond pour une meilleure visibilité */
 }
 
+/* En-tête h1 */
+header h1 {
+    text-align: center;
+    color: #d9534f; /* Couleur du titre */
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+nav {
+    max-width: fit-content;
+    margin: 0 auto;
+    padding: 0 1rem;
+}

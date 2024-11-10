@@ -18,6 +18,18 @@ body {
     min-height: 100vh;
 }
 
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    background: #d9534f;;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.5px;
+}
+
 nav {
     max-width: fit-content;
     margin: 0 auto;
@@ -75,10 +87,10 @@ header h1 {
 
 
 
-main {
-    width: 90%;
-    max-width: 800px;
-    margin-top: 30px;
+header, main {
+    border-radius: 10px;
+    padding: 1rem;
+    margin-top: 20px;
 }
 
 #earth-imagery h2 {
